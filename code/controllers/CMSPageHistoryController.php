@@ -92,7 +92,7 @@ class CMSPageHistoryController extends CMSMain {
 		
 		if($compareID) {
 			$link = Controller::join_links(
-				$this->Link('version'),
+				$this->Link('show'),
 				$id
 			);
 
