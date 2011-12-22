@@ -2467,12 +2467,12 @@ class SiteTree extends DataObject implements PermissionProvider,i18nEntityProvid
 	function getTreeTitle() {
 		if($this->IsDeletedFromStage) {
 			if($this->ExistsOnLive) {
-				$tag ="span class=\"del\" title=\"" . _t('SiteTree.REMOVEDFROMDRAFT', 'Removed from draft site') . "\"";
+				$tag ="span title=\"" . _t('SiteTree.REMOVEDFROMDRAFT', 'Removed from draft site') . "\" class=\"del\" ";
 			} else {
-				$tag ="span class=\"del\" class=\"deletedOnLive\" title=\"" . _t('SiteTree.DELETEDPAGE', 'Deleted page') . "\"";
+				$tag ="span title=\"" . _t('SiteTree.DELETEDPAGE', 'Deleted page') . "\" class=\"del status private deletedOnLive\" ";
 			}
 		} elseif($this->IsAddedToStage) {
-			$tag = "span class=\"ins\" title=\"" . _t('SiteTree.ADDEDTODRAFT', 'Added to draft site') . "\"";
+			$tag = "span title=\"" . _t('SiteTree.ADDEDTODRAFT', 'Added to draft site'). "\" class=\"ins status new\" ";
 		} elseif($this->IsModifiedOnStage) {
 			$tag = "span title=\"" . _t('SiteTree.MODIFIEDONDRAFT', 'Modified on draft site') . "\" class=\"status modified\"";
 		} else {
